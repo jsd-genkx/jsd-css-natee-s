@@ -19,21 +19,25 @@
 body {
 	font-family: var(--font-sans), serif;
 	background-color: var(--color-black);
+	
 }
 
 .container {
 	background-color: var(--color-accent);
 	width: 100%;
 	min-height: 100dvh;
+	outline: solid var(--color-black) 2px;
 
 	display: flex;
-	/* gap: 1rem; */
-	/* justify-content: center; */
-	/* align-items: center; */
+	flex-direction: row;     /*ใช้สลับแกน ซึ่งปกติ default เป็น Row จะเขียนหรือไม่เขียนก็ได้ มีคำสั่ง row-revers*/
+	gap: 1rem; 			  /*ระยะห่างระหว่าง item ทั้ง col and row*/
+	/* column-gap: ;  จะใช้แบบนี้ก็ได้*/    
+	justify-content: center;
+	align-items: center;
 	/* align-content: center; */
-	/* flex-wrap: wrap; */
+	/* flex-wrap: wrap;  ส่วนใหญ่จะใช้ flex-direction: row */
 
-	/* flex-direction: column; */
+	
 	/* height: 90vh; */
 }
 
@@ -44,14 +48,18 @@ body {
 	background-color: var(--color-primary);
 	color: var(--color-white);
 	border: solid var(--color-white) 5px;
+    /*ต่อไปนี้จะเป็นคำสั่งในส่วนของลูก  */
+	flex-shrink: 1; /*ย่อขนาดตัวเองได้เมื่อพื้นที่ไม่พอ 1ลดได้ 0ลดไม่ได้*/
+	flex-grow: 0; /*ยืดขยายตัวเองได้ในพื้นที่เหลือ 1ขยายได้ 0ขยายไม่ได้*/
+	flex-basis: 300px;
 
-	/* flex-shrink: 1;
-	flex-grow: 0;
-	flex-basis: 300px; */
+	flex:1; /*กำหนดทุก box*/
 
-	/* flex:1; */
+	display: flex;       /*เป็นการกำหนดตัวเลขให้อยู่ตรงกลาง ที่เราสร้างcode ใน .box นี้เพราะเป็น prarent ของ span*/
+	justify-content: center;
+	align-items: center;
 }
 
-/* .box3 {
-	flex:555;
-} */
+.box3, .box5 {     /*ยืดขยายตัวเองได้มากกว่ากล่องอื่นๆ */
+	flex:3; /*กำหนดเฉพาะ box*/
+}

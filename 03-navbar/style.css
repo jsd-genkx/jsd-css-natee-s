@@ -29,7 +29,7 @@ header {
 		color: var(--color-white);
 	}
 	a {
-		text-decoration: none;
+		text-decoration: none;  /*เอาขีดเส้นใต้ออก*/
 		font-size: 1.25rem;
 		font-weight: 500;
 	}
@@ -44,14 +44,14 @@ header {
 
 	li {
 		list-style: none;
-		cursor: pointer;
+		cursor: pointer; /**/
 
-		&:hover:not(:first-of-type, :last-of-type) {
-			text-decoration: underline;
-			text-decoration-color: var(--color-accent);
-			text-decoration-thickness: 3px;
-			text-underline-offset: 0.4em;
-			text-decoration-style: wavy;
+		&:hover:not(:first-of-type, :last-of-type) {  /*li and ยกเว้นตัวแรกกับตัวสุดท้าย*/
+			text-decoration: underline;	/*ขีดเส้นใต้*/
+			text-decoration-color: var(--color-accent);	/*สีของเส้นใต้*/
+			text-decoration-thickness: 3px; /*ความหนาของเส้นใต้*/
+			text-underline-offset: 0.4em; /*ระยะห่างของเส้นใต้*/
+			text-decoration-style: wavy; /*ชนิดของเส้นใต้*/
 		}
 
 		&:hover:last-of-type {
@@ -60,14 +60,14 @@ header {
 			border-radius: 0.5em;
 			box-shadow: 4px 4px 0 0;
 
-			a {
-				color: var(--color-primary);
+			a { 	/*a ภายใน li ตัวสุดท้าย*/
+				color: var(--color-primary); 	/**/
 				font-weight: 600;
 			}
 		}
 	}
 
-	.nav-item:first-of-type {
-		margin-right: auto;
+	.nav-item:first-of-type {   /*li ตัวแรก*/
+		margin-right: auto;		/*ดันไปทางขวาอัตโนมัติ*/
 	}
 }
